@@ -4,12 +4,6 @@ variable "filename" {
   description = "The file path to write the pet name"
 }
 
-variable "content" {
-  default = "My pet is a cat and is very cute"
-  type = string
-  description = "The content to write to the file"
-}
-
 variable "file_permission" {
   default = "0700"
   type = string
@@ -30,9 +24,18 @@ variable "length" {
 
 # list in terraform variables
 variable "prefix" {
-  default = ["Mr", "Mrs", "Miss", "Dr", "Prof"]
   type = list
+  default = ["Mr", "Mrs", "Miss", "Dr", "Prof"]
   description = "The prefix to add to the pet name"
+}
+
+# map in terraform variables
+variable "content" {
+  type = map(string)
+  default = {
+    "statement1" = "my pet is Kitty"
+    "statement2" = "he is very cute"
+  }
 }
 
 
