@@ -12,11 +12,9 @@ data "aws_ami" "amiID" {
   }
 
   owners = ["767828741654"]
-
 }
 
 output "instance_id" {
-  description = "value of the instance id"
+  description = "AMI ID of Ubuntu instance"
   value       = data.aws_ami.amiID.id
-
 }
